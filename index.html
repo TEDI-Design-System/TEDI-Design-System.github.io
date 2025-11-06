@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TEDI-Ready disainisüsteem - Design system for modern web applications">
+    <title>TEDI Design System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #005AA3 0%, #004277 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #005AA3;
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px;
+            display: block;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .storybook-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .storybook-card {
+            background: #ffffff;
+            border: 1px solid #D2D3D8;
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .storybook-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 90, 163, 0.2);
+            border-color: #005AA3;
+        }
+
+        .storybook-card .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #005AA3;
+            border: 1px solid #D2D3D8;
+        }
+
+        .storybook-card h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .storybook-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .storybook-card .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            min-height: 2.5rem;
+            padding: calc(0.5rem - 1px) 1rem;
+            margin: 0;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            background: #005AA3;
+            background-image: none;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #005AA3;
+            border-radius: 1.5rem;
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.5;
+            transition: background-color 0.15s, border-color 0.15s;
+        }
+
+        .storybook-card:hover .button {
+            background-color: #004277;
+            border-color: #004277;
+        }
+
+        .storybook-card .button:focus-visible {
+            outline: 2px solid #005AA3;
+            outline-offset: 1px;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #005AA3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .version {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 30px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 40px 30px;
+            }
+
+            .storybook-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="https://cdn.zeroheight.com/styleguide_logos/118912-default/1bf928b7da5dbb36b78ea8d4_TEDI_bear_square.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uemVyb2hlaWdodC5jb20vc3R5bGVndWlkZV9sb2dvcy8xMTg5MTItZGVmYXVsdC8xYmY5MjhiN2RhNWRiYjM2Yjc4ZWE4ZDRfVEVESV9iZWFyX3NxdWFyZS5wbmciLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3NjI0OTkyOTF9fX1dfQ__&Signature=ApXdXoAJo4SakvE4cgzNW2O3zugKbMv33x5AoiJGssc7b-p6tX3LjB1-eqBYPdrrkONh11FbSqxX99HIQ5bAj7-ctDav3CrfLHhk-tOF0gBL27BMyp4WvAIM2~ddvAyyVBWMQF1trZxXWavNR1lrz0J3T~Lw84-0qsMv2O1H~4ayLqRCMFRP3yhUJC5rPLU2eTQ-8Mv5naLVdzI4Y~JMPWvdcJx4HMq-6~Nu5QVDvYJu5WWa6F7e07glpbARh3pGigrfcADqik32hVKqs1GTo6~gbWiPRG9PTbqKzDTBB~CShzwjIdop4vKrE7pgIA2HSojTzGyMQtiKrA5T68L0Rw__&Key-Pair-Id=KDUNFXWNWK45P" alt="TEDI Logo" class="logo">
+            <h1>TEDI Design System</h1>
+        </header>
+
+        <main class="content">
+            <div class="storybook-links">
+                <a href="https://storybook.tedi.ee/react" class="storybook-card">
+                    <div class="icon">
+                        <svg viewBox="-11.5 -10.23174 23 20.46348" width="60" height="60">
+                            <circle cx="0" cy="0" r="2.05" fill="#61dafb"/>
+                            <g stroke="#61dafb" stroke-width="1" fill="none">
+                                <ellipse rx="11" ry="4.2"/>
+                                <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+                                <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3>React</h3>
+                    <span class="button">Open React Storybook →</span>
+                </a>
+
+                <a href="https://storybook.tedi.ee/angular" class="storybook-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 250 250" width="60" height="60">
+                            <g>
+                                <polygon fill="#DD0031" points="125,30 125,30 125,30 31.9,63.2 46.1,186.3 125,230 125,230 125,230 203.9,186.3 218.1,63.2"/>
+                                <polygon fill="#C3002F" points="125,30 125,52.2 125,52.1 125,153.4 125,153.4 125,230 125,230 203.9,186.3 218.1,63.2 125,30"/>
+                                <path fill="#FFFFFF" d="M125,52.1L66.8,182.6h0h21.7h0l11.7-29.2h49.4l11.7,29.2h0h21.7h0L125,52.1L125,52.1L125,52.1L125,52.1 L125,52.1z M142,135.4H108l17-40.9L142,135.4z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3>Angular</h3>
+                    <span class="button">Open Angular Storybook →</span>
+                </a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Maintained by <a href="https://tedi.tehik.ee/1ee8444b7/p/012140-tedi-ready-disainisusteem" target="_blank" rel="noopener noreferrer">TEDI</a></p>
+            <p style="margin-top: 8px; font-size: 0.85rem; color: #999;">TEDI Design System</p>
+        </footer>
+    </div>
+</body>
+</html>
